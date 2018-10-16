@@ -3,6 +3,7 @@ package com.codingnomads.divedb.logic;
 import java.time.LocalDate;
 
 public class Dive {
+    private Integer id;
     private String name;
     private LocalDate date;
     private String location;
@@ -68,5 +69,13 @@ public class Dive {
 
     public void setSafetyStop(Boolean safetyStop) {
         this.safetyStop = safetyStop;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

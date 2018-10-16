@@ -3,9 +3,8 @@ package com.codingnomads.divedb.logic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
-
-import static java.util.Arrays.asList;
 
 @Service
 public class DiveService {
@@ -23,5 +22,13 @@ public class DiveService {
 
     public Dive save(Dive dive) {
         return diveRepository.save(dive);
+    }
+
+    public Dive getById(Integer id) {
+        return diveRepository.getById(id);
+    }
+
+    public List<Dive> getByDate(LocalDate date) {
+        return diveRepository.getByDate(date);
     }
 }
