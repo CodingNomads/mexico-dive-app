@@ -27,8 +27,7 @@ public class JdbcConfiguration {
     @Bean
     public DataSource mysqlDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://" + host + ":" + port + "/" + schema + "?verifyServerCertificate=false&useSSL=false&requireSSL=false");
+        dataSource.setUrl("jdbc:mysql://" + host + ":" + port + "/" + schema + "?verifyServerCertificate=false&useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true");
         dataSource.setUsername(username);
         dataSource.setPassword(password);
         return dataSource;
