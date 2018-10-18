@@ -1,7 +1,11 @@
 package com.codingnomads.divedb.data;
 
 import com.codingnomads.divedb.logic.Weather;
+import com.codingnomads.divedb.logic.WeatherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
@@ -9,13 +13,19 @@ import org.springframework.web.util.DefaultUriBuilderFactory;
 import java.net.URI;
 
 @Repository
-public class ApiWeatherRepository {
+@PropertySource("classpath:openWeatherApi.properties")
+public class ApiWeatherRepository implements WeatherRepository {
 
-    private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/";
+
+    @Value("${api.weather.baseurl}")
+    private String BASE_URL;
+    @Value("${api.weather.apikey.param}")
+    private String APPID;
+    @Value("${api.weather.apikey.value}")
+    private String API_KEY;
+
     private static final String PATH = "weather";
-    private static final String API_KEY = "9727f8d341a22a7983a08006f4a5261b";
     private static final String QUERY = "q";
-    private static final String APPID = "APPID";
 
     private RestTemplate restTemplate;
 
@@ -24,6 +34,7 @@ public class ApiWeatherRepository {
         this.restTemplate = restTemplate;
     }
 
+    @Override
     public Weather getWeather(String location) {
         URI uri = new DefaultUriBuilderFactory()
                 .uriString(BASE_URL)
@@ -31,7 +42,8 @@ public class ApiWeatherRepository {
                 .queryParam(QUERY, location)
                 .queryParam(APPID, API_KEY)
                 .build();
-        return restTemplate.getForEntity(uri, Weather.class).getBody();
+        ResponseEntity<Weather> result = restTemplate.getForEntity(uri, Weather.class);
+        return result.getBody();
     }
 
 }
