@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/weather")
-public class WeatherController {
+public class WeatherApiController {
     private WeatherService weatherService;
 
-    public WeatherController(WeatherService weatherService) {
+    public WeatherApiController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 

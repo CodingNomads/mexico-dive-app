@@ -10,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users/logbook/dives")
-public class DivesController {
+public class DivesApiController {
     private DiveService diveService;
 
     @Autowired
-    public DivesController(DiveService diveService) {
+    public DivesApiController(DiveService diveService) {
         this.diveService = diveService;
     }
 
