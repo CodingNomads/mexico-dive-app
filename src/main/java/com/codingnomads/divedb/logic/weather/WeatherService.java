@@ -1,4 +1,4 @@
-package com.codingnomads.divedb.logic;
+package com.codingnomads.divedb.logic.weather;
 
 import com.codingnomads.divedb.data.ApiWeatherRepository;
 import org.springframework.beans.factory.annotation.Autowired;

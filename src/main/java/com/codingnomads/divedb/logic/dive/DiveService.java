@@ -1,4 +1,4 @@
-package com.codingnomads.divedb.logic;
+package com.codingnomads.divedb.logic.dive;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

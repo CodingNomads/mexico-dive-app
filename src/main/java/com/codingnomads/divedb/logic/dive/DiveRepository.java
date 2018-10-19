@@ -1,4 +1,4 @@
-package com.codingnomads.divedb.logic;
+package com.codingnomads.divedb.logic.dive;
 
 import org.springframework.stereotype.Repository;
 

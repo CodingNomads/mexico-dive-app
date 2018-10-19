@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Diving Application!</title>
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="/css/main.css"/> -->
+     <!--<link rel='stylesheet' href='/webjars/bootstrap/4.1.3/css/bootstrap.min.css'>-->
+</head>
+<body>
+
+<p th:text="'Hi there! the date is: ' + ${date}"/>
+<h1>Dives List</h1>
+
+<table class="table blueTable">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>date</th>
+        <th>location</th>
+        <th>durationInMinutes</th>
+        <th>maxDepthInMeters</th>
+        <th>waterCondition</th>
+        <th>safetyStop</th>
+    </tr>
+    <tr th:each="dive : ${dives}">
+        <td th:text="${dive.id}"></td>
+        <td th:text="${dive.name}"></td>
+        <td th:text="${dive.date}"></td>
+        <td th:text="${dive.location}"></td>
+        <td th:text="${dive.durationInMinutes}"></td>
+        <td th:text="${dive.maxDepthInMeters}"></td>
+        <td th:text="${dive.waterCondition}"></td>
+        <td th:text="${dive.safetyStop}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

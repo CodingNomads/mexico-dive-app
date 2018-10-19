@@ -1,6 +1,6 @@
-package com.codingnomads.divedb.data;
+package com.codingnomads.divedb.data.dive;
 
-import com.codingnomads.divedb.logic.Dive;
+import com.codingnomads.divedb.logic.dive.Dive;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

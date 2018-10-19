@@ -1,7 +1,7 @@
-package com.codingnomads.divedb.data;
+package com.codingnomads.divedb.data.dive;
 
-import com.codingnomads.divedb.logic.Dive;
-import com.codingnomads.divedb.logic.DiveRepository;
+import com.codingnomads.divedb.logic.dive.Dive;
+import com.codingnomads.divedb.logic.dive.DiveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;

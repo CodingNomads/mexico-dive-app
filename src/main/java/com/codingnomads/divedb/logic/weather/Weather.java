@@ -1,4 +1,4 @@
-package com.codingnomads.divedb.logic;
+package com.codingnomads.divedb.logic.weather;
 
 public class Weather {
     private String name;

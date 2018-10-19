@@ -1,7 +1,7 @@
-package com.codingnomads.divedb.data;
+package com.codingnomads.divedb.data.dive;
 
-import com.codingnomads.divedb.logic.Dive;
-import com.codingnomads.divedb.logic.DiveRepository;
+import com.codingnomads.divedb.logic.dive.Dive;
+import com.codingnomads.divedb.logic.dive.DiveRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;

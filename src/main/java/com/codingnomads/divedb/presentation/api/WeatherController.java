@@ -1,7 +1,7 @@
-package com.codingnomads.divedb.presentation;
+package com.codingnomads.divedb.presentation.api;
 
-import com.codingnomads.divedb.logic.Weather;
-import com.codingnomads.divedb.logic.WeatherService;
+import com.codingnomads.divedb.logic.weather.Weather;
+import com.codingnomads.divedb.logic.weather.WeatherService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

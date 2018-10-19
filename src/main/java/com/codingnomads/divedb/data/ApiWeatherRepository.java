@@ -1,11 +1,10 @@
 package com.codingnomads.divedb.data;
 
-import com.codingnomads.divedb.logic.Weather;
-import com.codingnomads.divedb.logic.WeatherRepository;
+import com.codingnomads.divedb.logic.weather.Weather;
+import com.codingnomads.divedb.logic.weather.WeatherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
@@ -42,8 +41,7 @@ public class ApiWeatherRepository implements WeatherRepository {
                 .queryParam(QUERY, location)
                 .queryParam(APPID, API_KEY)
                 .build();
-        ResponseEntity<Weather> result = restTemplate.getForEntity(uri, Weather.class);
-        return result.getBody();
+        return restTemplate.getForObject(uri, Weather.class);
     }
 
 }

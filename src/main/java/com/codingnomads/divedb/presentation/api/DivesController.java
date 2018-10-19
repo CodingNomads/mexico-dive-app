@@ -1,7 +1,7 @@
-package com.codingnomads.divedb.presentation;
+package com.codingnomads.divedb.presentation.api;
 
-import com.codingnomads.divedb.logic.Dive;
-import com.codingnomads.divedb.logic.DiveService;
+import com.codingnomads.divedb.logic.dive.Dive;
+import com.codingnomads.divedb.logic.dive.DiveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
