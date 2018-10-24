@@ -1,38 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Diving Application!</title>
-    <!-- <link rel="stylesheet" type="text/css" media="all" href="/css/main.css"/> -->
-     <!--<link rel='stylesheet' href='/webjars/bootstrap/4.1.3/css/bootstrap.min.css'>-->
+    <div th:replace="fragments/head :: head"></div>
 </head>
 <body>
+<div th:replace="fragments/navigation :: navigation"></div>
 
-<p th:text="'Hi there! the date is: ' + ${date}"/>
-<h1>Dives List</h1>
+<div class="container">
 
-<table class="table blueTable">
-    <tr>
-        <th>ID</th>
-        <th>name</th>
-        <th>date</th>
-        <th>location</th>
-        <th>durationInMinutes</th>
-        <th>maxDepthInMeters</th>
-        <th>waterCondition</th>
-        <th>safetyStop</th>
-    </tr>
-    <tr th:each="dive : ${dives}">
-        <td th:text="${dive.id}"></td>
-        <td th:text="${dive.name}"></td>
-        <td th:text="${dive.date}"></td>
-        <td th:text="${dive.location}"></td>
-        <td th:text="${dive.durationInMinutes}"></td>
-        <td th:text="${dive.maxDepthInMeters}"></td>
-        <td th:text="${dive.waterCondition}"></td>
-        <td th:text="${dive.safetyStop}"></td>
-    </tr>
-</table>
+    <h1>Welcome to the diving application</h1>
 
+    <p th:text="'Hello, today is ' + ${date}"/>
+    <img class="img-fluid" src="/img/background-dive.png"/>
+
+
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

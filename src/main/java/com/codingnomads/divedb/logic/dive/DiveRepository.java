@@ -15,4 +15,6 @@ public interface DiveRepository {
     Dive getById(Integer id);
 
     List<Dive> getByDate(LocalDate date);
+
+    Integer deleteById(Integer id);
 }

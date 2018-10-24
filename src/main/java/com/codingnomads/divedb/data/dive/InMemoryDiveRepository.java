@@ -46,4 +46,9 @@ public class InMemoryDiveRepository implements DiveRepository {
                 .filter(dive -> dive.getDate().equals(date))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Integer deleteById(Integer id) {
+        return null;
+    }
 }

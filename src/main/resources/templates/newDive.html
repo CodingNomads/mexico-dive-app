@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/head :: head"></div>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navigation"></div>
+
+<div class="container">
+
+    <h1>New Dive</h1>
+
+
+    <form th:action="@{/dives/new}" th:object="${dive}" method="post">
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{name}" id="inputName" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" th:field="*{date}" id="inputDate" placeholder="Date">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{location}" id="inputLocation" placeholder="Location">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputDuration" class="col-sm-2 col-form-label">Duration</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" th:field="*{durationInMinutes}"  id="inputDuration" placeholder="Duration in minutes">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputMaxDepth" class="col-sm-2 col-form-label">Maximum depth</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" th:field="*{maxDepthInMeters}"  id="inputMaxDepth" placeholder="Maximum depth in meters">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputCondition" class="col-sm-2 col-form-label">Water condition</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{waterCondition}"  id="inputCondition" placeholder="Water condition">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">Safety Stop</div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" th:field="*{safetyStop}"  id="checkSafetyStop">
+                    <label class="form-check-label" for="checkSafetyStop">
+                        Safety Stop
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -1,10 +1,13 @@
 package com.codingnomads.divedb.logic.dive;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 public class Dive {
     private Integer id;
     private String name;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String location;
     private Double durationInMinutes;
@@ -77,5 +80,19 @@ public class Dive {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Dive{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                ", location='" + location + '\'' +
+                ", durationInMinutes=" + durationInMinutes +
+                ", maxDepthInMeters=" + maxDepthInMeters +
+                ", waterCondition='" + waterCondition + '\'' +
+                ", safetyStop=" + safetyStop +
+                '}';
     }
 }

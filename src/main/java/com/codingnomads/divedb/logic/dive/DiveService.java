@@ -31,4 +31,8 @@ public class DiveService {
     public List<Dive> getByDate(LocalDate date) {
         return diveRepository.getByDate(date);
     }
+
+    public Integer deleteById(Integer id) {
+        return diveRepository.deleteById(id);
+    }
 }

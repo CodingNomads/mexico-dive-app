@@ -61,5 +61,12 @@ public class MySqlDiveRepository implements DiveRepository {
         return jdbcTemplate.query(query, namedParameters, rowMapper);
     }
 
+    @Override
+    public Integer deleteById(Integer id) {
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE " + "d_id = :id ";
+        SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("id", id);
+        return jdbcTemplate.update(query, namedParameters);
+    }
+
 
 }
