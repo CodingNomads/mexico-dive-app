@@ -5,6 +5,7 @@ import com.codingnomads.divedb.logic.dive.DiveService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 
@@ -14,9 +15,10 @@ public class DivesController {
     private DiveService diveService;
 
     @GetMapping("/dives")
-    public String dives(Model model) {
-        model.addAttribute("dives", diveService.getAllDives());
-        return "dives";
+    public ModelAndView dives(ModelAndView modelAndView) {
+        modelAndView.addObject("dives", diveService.getAllDives());
+        modelAndView.setViewName("dives");
+        return modelAndView;
     }
 
     @GetMapping("/dives/new")
