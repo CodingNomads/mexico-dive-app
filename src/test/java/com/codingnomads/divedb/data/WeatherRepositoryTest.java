@@ -8,6 +8,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import static org.junit.Assert.fail;
+
 
 public class WeatherRepositoryTest {
 
@@ -16,7 +18,6 @@ public class WeatherRepositoryTest {
 
    @Test
    public void testMethod() {
-    //   System.out.println(restRepository.getWeather());
-
+//fail();
    }
 }

@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  database:
+    image: mysql:latest
+    expose:
+      - 3306
+    ports:
+      - "3307:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=test
+    - MYSQL_PASSWORD=root
+    networks:
+    - my-backend
+
+  dive-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+    - database
+    ports:
+    - 8080:8080
+    environment:
+    - DATABASE_HOST=mysql
+    - DATABASE_USER=root
+    - DATABASE_PASSWORD=root
+    - DATABASE_NAME=test
+    - DATABASE_PORT=3307
+    networks:
+    - my-backend
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+    - "8081:8080"
+    stop_grace_period: 1m30s
+    volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  my-backend:
+    driver: bridge
