@@ -3,7 +3,8 @@ spring:
     name: diveapp
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_DB_HOST:localhost}:3306/diveapp?useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://mysql.cunihg2vvk4o.us-east-2.rds.amazonaws.com:3306/diveapp?useSSL=false&allowPublicKeyRetrieval=true
+#    url: jdbc:mysql://${MYSQL_DB_HOST:localhost}:3306/diveapp?useSSL=false&allowPublicKeyRetrieval=true
     username: ${MYSQL_DB_USERNAME:test}
     password: ${MYSQL_DB_PASSWORD:test}
 server:
