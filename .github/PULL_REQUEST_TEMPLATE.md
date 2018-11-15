@@ -1,4 +1,4 @@
-## Done Done
+## Definition of Done Done
 <!--- Your code is not Done until it accomplish everything in here: -->
 - [ ] Code must compile and work.
 - [ ] Code must be tested
