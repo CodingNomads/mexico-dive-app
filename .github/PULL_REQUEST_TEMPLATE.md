@@ -1,5 +1,5 @@
 ## Definition of Done Done
-<!--- Your code is not Done until it accomplish everything in here: -->
+<!--- Your code is not Done until it accomplish everything in here (Mark the ones that you completed-->
 - [ ] Code must compile and work.
 - [ ] Code must be tested
 - [ ] Code must be reviewed
